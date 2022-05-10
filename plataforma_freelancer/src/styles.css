@@ -1,4 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rowdies:wght@300;400;700&display=swap');
+
 body{
     margin: 0;
 }
@@ -21,7 +23,7 @@ button {
 }
 
 h1{
-    font-family: Verdana;
+    font-family: 'Rowdies', bold;
     font-style: normal;
     font-weight: 700;
     font-size: 48px;
@@ -34,7 +36,7 @@ input{
 }
 
 p{
-    font-family: Verdana;
+    font-family: 'Roboto', regular;
     color: #FFFFFF;  
 }
 
