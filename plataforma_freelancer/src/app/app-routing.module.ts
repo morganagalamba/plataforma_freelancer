@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ContractedServiceScreenComponent } from './contracted-service-screen/contracted-service-screen.component';
 import { CreateServiceScreenComponent } from './create-service-screen/create-service-screen.component';
 import { FeedbackScreenComponent } from './feedback-screen/feedback-screen.component';
 import { FreelancersScreenComponent } from './freelancers-screen/freelancers-screen.component';
@@ -12,6 +13,8 @@ const routes: Routes = [
   { path: 'freelancers/:service', component: FreelancersScreenComponent },
   { path: 'feedback', component: FeedbackScreenComponent },
   { path: 'create', component: CreateServiceScreenComponent },
+  { path: 'contracted', component: ContractedServiceScreenComponent},
+
 ];
 
 @NgModule({
