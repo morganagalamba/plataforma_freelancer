@@ -4,6 +4,15 @@
     justify-content: center;
 }
 
-.column {
+.lista-de-freelancers {
     flex-direction: column;
+    margin: 0;
+    height: 400px;
+    width: 100%;
+}
+
+h1{
+    color: #9e00ff;
+    mix-blend-mode: luminosity;
+    text-shadow: 5px 5px 5px rgba(224, 68, 255, 0.178);
 }
