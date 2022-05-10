@@ -29,31 +29,6 @@ export class FreelancersScreenComponent implements OnInit {
     this.router.navigate(['contracted']);
   }
 
-  sortByBestScores() {
-    this.filteredFreelancers.sort((a, b) => b.score - a.score);
-    this.freelancers.sort((a, b) => b.score - a.score);
-  }
-
-  sortByWorstScore() {
-    this.filteredFreelancers.sort((a, b) => a.score - b.score);
-    this.freelancers.sort((a, b) => a.score - b.score);
-  }
-
-  sortByName() {
-    this.filteredFreelancers.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
-    this.freelancers.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
-  }
-
-  filterBy(numberOfStars: number) {
-    this.isFiltered = true;
-    this.filteredFreelancers = this.freelancers.filter((freelancer) => freelancer.score >= numberOfStars);
-  }
-
-  cleanFilters() {
-    this.isFiltered = false;
-    this.filteredFreelancers = [];
-  }
-
   navigateToCreateService() {
     this.router.navigate(['/create']);
   }
