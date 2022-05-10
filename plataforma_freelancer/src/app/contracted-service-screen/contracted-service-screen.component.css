@@ -1,0 +1,16 @@
+h1{
+    color: #9e00ff;
+    mix-blend-mode: luminosity;
+}
+
+.contracted-service-screen{
+    font-family: 'Roboto';
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.content{
+    display: flex;
+}
