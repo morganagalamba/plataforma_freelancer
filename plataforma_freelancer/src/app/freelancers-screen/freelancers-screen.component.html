@@ -1,7 +1,7 @@
 <div class="freelancer-screen">
 
     <h1> {{ "Pessoas oferecendo o serviço de " + service }}</h1>
-    <button (click)="navigateToCreateService()">Cadastrar serviço</button>
+    <button class="createService" (click)="navigateToCreateService()">Cadastrar serviço</button>
 
     <div class="lista-de-freelancers">
         <div *ngFor="let freelancer of freelancers" class="serviceCard">

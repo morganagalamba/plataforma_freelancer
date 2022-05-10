@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './freelancers-screen.component.html',
   styleUrls: ['./freelancers-screen.component.css']
 })
+
 export class FreelancersScreenComponent implements OnInit {
 
   service: string | null;
