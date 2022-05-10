@@ -26,7 +26,7 @@ export class FreelancersScreenComponent implements OnInit {
   }
 
   navigateToFeedback(freelancer: Freelancer) {
-    this.router.navigate(['feedback']);
+    this.router.navigate(['contracted']);
   }
 
   sortByBestScores() {

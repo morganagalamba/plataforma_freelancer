@@ -9,6 +9,8 @@ import { ServicesScreenComponent } from './services-screen/services-screen.compo
 import { FreelancersScreenComponent } from './freelancers-screen/freelancers-screen.component';
 import { CreateServiceScreenComponent } from './create-service-screen/create-service-screen.component';
 import { FormsModule } from '@angular/forms';
+import { ContractedServiceScreenComponent } from './contracted-service-screen/contracted-service-screen.component';
+import { FreelancersFeedbackScreenComponent } from './freelancers-feedback-screen/freelancers-feedback-screen.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { FormsModule } from '@angular/forms';
     LoginScreenComponent,
     ServicesScreenComponent,
     FreelancersScreenComponent,
-    CreateServiceScreenComponent
+    CreateServiceScreenComponent,
+    ContractedServiceScreenComponent,
+    FreelancersFeedbackScreenComponent
   ],
   imports: [
     BrowserModule,
