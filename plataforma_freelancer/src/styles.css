@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0;
+}
+
+header{
+    height: 39px;
+    background-color: #2B2B2B;
+}
+footer{
+    height: 39px;
+    background-color: #2B2B2B;
+}
+
+button {
+    background: #4F23FF;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.37);
+    border-radius: 43px;
+    border: #4F23FF;
+    color: #FFFFFF;
+}
+
+h1{
+    font-family: Verdana;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+}
+
+input{
+    background: #FFFFFF;
+    border-radius: 5px;
+    border: #FFFFFF; 
+}
+
+p{
+    font-family: Verdana;
+    color: #FFFFFF;  
+}
+
+.info{
+    font-size: 10px;
+    color: red;
+}

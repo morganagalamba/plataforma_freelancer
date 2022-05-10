@@ -1,6 +1,42 @@
-.login-screen * {
+.login-screen  {
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    height: 749px;
+    background: linear-gradient(248.41deg, #00F0FF 14.5%, #4F23FF 55.64%, #9E00FF 80.41%);
+  
+}
+
+.contentLogin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    height: 749px;
+    width: 100%;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(30, 30, 30, 0.6461) 100%);
+}
+
+body {
+    margin: 0;
+}
+
+button {
+    width: 190px;
+    height: 45px;
+}
+
+
+h1{
+    color: #FFFFFF;
+    mix-blend-mode: overlay;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.37);
+}
+
+input{
+    width: 320px;
+    height: 25px;
 }
