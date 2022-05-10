@@ -8,9 +8,29 @@ h1{
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .content{
     display: flex;
+    align-items: center;
+    font-weight: bold;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+p{
+    color: black;
+}
+
+.serviceName{
+    margin: 0; 
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.freelancer{
+    margin: 0; 
+    font-weight:normal;
+    font-size: 16px;
 }
