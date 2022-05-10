@@ -1,8 +1,17 @@
 <section class="services-screen">
+    <div class="background">
+        <div class="header">
+            <h1>Bem vinde a maior plataforma de freelancers do cin</h1>
+            <button> Oferecer serviço </button>
+        </div>
+    </div>
     <div class="content">
-        <button *ngFor="let service of services" (click)="navigateToFreelancers(service)">
+        <div *ngFor="let service of services" class="serviceCard">
             {{ service }}
-        </button>
+            <button class="cardButton" (click)="navigateToFreelancers(service)">
+                Contratar
+            </button>
+        </div>
     </div>
 </section>
 <router-outlet></router-outlet>

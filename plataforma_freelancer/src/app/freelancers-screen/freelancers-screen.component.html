@@ -1,17 +1,15 @@
 <div class="freelancer-screen">
 
     <h1> {{ "Pessoas oferecendo o serviço de " + service }}</h1>
-    <p><button (click)="navigateToCreateService()">Cadastrar serviço</button></p>
+    <button (click)="navigateToCreateService()">Cadastrar serviço</button>
 
     <div class="lista-de-freelancers">
-
-        <dl *ngFor="let freelancer of freelancers" class="column">
-
-            <dd>{{ freelancer.name }}</dd>
-            <dd><button (click)="navigateToFeedback(freelancer)"> Contratar </button></dd>
-            <br>
-
-        </dl>
+        <div *ngFor="let freelancer of freelancers" class="serviceCard">
+            {{ freelancer.name }}
+            <button class="cardButton" (click)="navigateToFeedback(freelancer)">
+                Contratar
+            </button>
+        </div>
 
     </div>
    
