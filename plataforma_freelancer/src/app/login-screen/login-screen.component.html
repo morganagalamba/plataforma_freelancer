@@ -1,18 +1,19 @@
 <section class="login-screen">
     <div class="contentLogin">
-        
+        <h1>Login</h1>
         <p>Insira seu login:</p>
         <input [(ngModel)]= "usuario.cpf" >
-        <p>Seu login deve ter no mínimo 5 caracteres</p> 
-        
+        <p class="info">Seu login deve ter no mínimo 5 caracteres</p> 
         <p>Insira sua senha:</p>
         <input [(ngModel)]= "usuario.senha" >
-        <p>Sua senha deve ter no mínimo 3 caracteres</p> 
+        <p class="info">Sua senha deve ter no mínimo 3 caracteres</p> 
         
         
         <button (click)="logar()"> Login </button>
 
     </div>
+
+
 
 <!--
     <div class="contentCadastro">
@@ -37,7 +38,6 @@
     </div>
     -->
 </section>
-
 
 <!--
     <p> Usuários salvos: </p>
