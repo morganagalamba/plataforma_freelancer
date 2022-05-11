@@ -20,15 +20,19 @@ export class LoginScreenComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   this.usuarios = this.dadosUsuario.getLogin();
-   this.senhas = this.dadosUsuario.getSenha();
+   //this.usuarios = this.dadosUsuario.getLogin();
+   //this.senhas = this.dadosUsuario.getSenha();
   }
 
 
   logar(login: string, senha: string){
-    this.router.navigateByUrl('services');
-    this.dadosUsuario.novoUsuario(login);
-    this.dadosUsuario.novaSenha(senha);
+
+    if (this.dadosUsuario.checarUsuario(login,senha)) {
+      this.router.navigateByUrl('services');
+    }
+    
+    //his.dadosUsuario.novoUsuario(login);
+    //this.dadosUsuario.novaSenha(senha);
   }
 
 }
