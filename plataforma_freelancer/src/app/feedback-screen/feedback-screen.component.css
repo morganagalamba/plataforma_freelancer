@@ -1,66 +1,43 @@
 .feedback-screen {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(0,0,0,0.5);
-}
-
-.feedback-screen .modal {
+    margin: 0;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 50%;
-    width: 50%;
-    background-color: #fafafa;
-    border-radius: 20px;
-    padding: 30px;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(248.41deg, #00F0FF 14.5%, #4F23FF 55.64%, #9E00FF 80.41%);
 }
 
-.feedback-screen form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    height: 100%;
-    width: 100%;
+h1{
+    color: #FFFFFF;
+    mix-blend-mode: overlay;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.37);
+    text-align: center;
 }
 
-.feedback-screen form .modal-body{
+textarea{
+    width: 87%;
+    height: 231px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    flex-grow: 1;
-    margin: 30px;
-}
-
-.feedback-screen form .form-group {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    flex-direction: column;
+    border-radius: 10px;
 }
 
-.feedback-screen form .form-group.comment {
+ .modal {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 80%;
-    height: 80%;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(30, 30, 30, 0.6461) 100%);
+    
 }
 
-.feedback-screen form .form-group textarea{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
+button{
+    margin-top: 30px;
+    width: 190px ;
+    height: 45px;
 }
