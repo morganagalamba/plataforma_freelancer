@@ -16,11 +16,11 @@ footer{
 }
 
 button {
-    background: #4F23FF;
+    
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.37);
     border-radius: 43px;
-    border: #4F23FF;
-    color: #FFFFFF;
+    
+    
 }
 
 h1{
@@ -57,10 +57,16 @@ p{
     height: 181px;
     width: 282px;
     font-family: 'Roboto';
+    background: #FFFFFF;
+    border: #FFFFFF;
+    color: black;
   }
 
 .cardButton{
     width: 121px;
     height: 30px;
     margin-top: 90px;
+    background: #4F23FF;
+    border: #4F23FF;
+    color: #FFFFFF;
 }

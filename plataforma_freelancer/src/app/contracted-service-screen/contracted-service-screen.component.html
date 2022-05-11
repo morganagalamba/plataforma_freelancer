@@ -1,13 +1,17 @@
 <section class="contracted-service-screen">
     <h1>Serviços contratados por você: </h1>
     <div class="content">
-        <div *ngFor="let service of services" class="serviceCard">
-            <p class="serviceName">{{service.name}}</p>
-            <p class="freelancer">{{service.freelancer}}</p>
-            <button class="cardButton" (click)="navigateToFeedback()" >
-                Feedback
-            </button>
-        </div>
+        
+            <div *ngFor="let service of services">
+                <button class="serviceCard" (click)="navigateToFreelancersFeedback()">
+                    <p class="serviceName">{{service.name}}</p>
+                    <p class="freelancer">{{service.freelancer}}</p>
+                    <button class="cardButton" (click)="navigateToFeedback()" >
+                        Feedback
+                    </button>
+                </button>
+            </div>
+          
     </div>
 </section>
 <router-outlet></router-outlet>

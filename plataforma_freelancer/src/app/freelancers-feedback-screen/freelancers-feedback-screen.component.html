@@ -1,1 +1,12 @@
-<p>freelancers-feedback-screen works!</p>
+<section class="freelancers-feedback-screen">
+
+    <div class="modal">
+        <h1>"Feedbacks de Wilton" </h1> 
+        <div *ngFor="let feedback of feedbacks" class="feedback-card">
+            <p class="service" >{{feedback.service}}</p>
+            <p class="feedback"> "{{feedback.description}}" </p>
+            <p class="person">-{{feedback.name}}</p>
+        </div>
+    </div>
+</section>
+
