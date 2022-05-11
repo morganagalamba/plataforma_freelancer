@@ -4,84 +4,40 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 749px;
+    min-height: 100vh;
     background: linear-gradient(248.41deg, #00F0FF 14.5%, #4F23FF 55.64%, #9E00FF 80.41%);
 }
 
 h1{
     color: #FFFFFF;
-    mix-blend-mode: normal;
+    mix-blend-mode: overlay;
     text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.37);
+    text-align: center;
 }
 
-h3{
-    color: white;
-    mix-blend-mode: normal;
-}
-
-.form-group-grade{
-    background: white;
+textarea{
+    width: 87%;
+    height: 231px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 1%;
-    width: 20%;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 20px;
-    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(30, 30, 30, 0.6461) 100%);
-}
-
-.feedback-screen .modal {
-    display: flex;
     flex-direction: column;
+    border-radius: 10px;
+}
+
+ .modal {
+    display: flex;
     align-items: center;
     justify-content: center;
-    height: 30%;
-    width: 80%;
-    border-radius: 20px;
-    padding: 20px;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
     background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(30, 30, 30, 0.6461) 100%);
     
-    
 }
 
-.feedback-screen form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    height: 80%;
-    width: 100%;
-}
-
-.feedback-screen form .modal-body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    flex-grow: 1;
-    margin: 10px;
-    padding: 1px;
-}
-
-
-.feedback-screen form .form-group.comment {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 80%;
-    height: 80%;
-    color: aliceblue;
-}
-
-.feedback-screen form .form-group textarea{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
+button{
+    margin-top: 30px;
+    width: 190px ;
+    height: 45px;
 }
