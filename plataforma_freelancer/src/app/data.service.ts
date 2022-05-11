@@ -18,6 +18,10 @@ export class DataService {
     this.usuarioLogado = name ;
   }
 
+  updatecontractedServices(service: Service){
+    this.contractedServices.push(service);
+  }
+
   getContractedServices(): Service[]{
     return this.contractedServices;
   }
@@ -35,7 +39,7 @@ export class DataService {
   constructor() { 
     this.usuarios = [["morgs","12345"],["isabel", "2234"]];
     this.usuarioLogado = "bla";
-    this.contractedServices = [new Service("Maria","Design")];
+    this.contractedServices = [];
   }
 }
 

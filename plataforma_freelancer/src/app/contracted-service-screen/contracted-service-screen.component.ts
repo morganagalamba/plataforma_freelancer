@@ -18,6 +18,8 @@ export class ContractedServiceScreenComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    const par = this.activatedRoute.snapshot.paramMap.get('contractedService');
+    
     this.getServices()
   }
 

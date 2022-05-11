@@ -8,7 +8,7 @@
         *ngFor="let freelancer of freelancers" class="serviceCard" 
         (click)="navigateToFreelancersFeedback(freelancer)">
                 {{ freelancer }}
-                <button class="cardButton" (click)="navigateToContracted()">
+                <button class="cardButton" (click)="navigateToContracted(freelancer)">
                     Contratar
                 </button>
         </button>

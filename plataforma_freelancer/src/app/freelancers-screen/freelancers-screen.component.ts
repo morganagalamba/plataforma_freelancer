@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FreelancersService } from '../freelancers.service';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-freelancers-screen',
@@ -16,7 +17,8 @@ export class FreelancersScreenComponent implements OnInit {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private systemServices: FreelancersService
+    private systemServices: FreelancersService,
+    private dadosUsuario: DataService
   ) {
     this.service = "";
   }
@@ -30,15 +32,33 @@ export class FreelancersScreenComponent implements OnInit {
     
   }
 
-  navigateToContracted() {
+  navigateToContracted(freelancer: string) {
+    if(this.service != null){
+      this.contractNewService(new Service(freelancer,this.service));
+    }
     this.router.navigate(['contracted']);
   }
 
+  contractNewService(service: Service) {
+    this.dadosUsuario.updatecontractedServices(service);
+  }
+
   navigateToCreateService() {
-    this.router.navigate(['/create']);
+    this.router.navigate(['/create' ]);
   }
 
   navigateToFreelancersFeedback(freelancer: string) {
+   
     this.router.navigate(['freelancers-feedback/' + freelancer]);
+  }
+}
+
+class Service{
+  freelancer: string;
+  service: string;
+
+  constructor(freelancer: string, service: string){
+    this.freelancer = freelancer;
+    this.service = service;
   }
 }
