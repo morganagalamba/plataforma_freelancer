@@ -8,10 +8,16 @@ import { FreelancersService } from '../freelancers.service';
 })
 export class FreelancersFeedbackScreenComponent implements OnInit {
 
-  feedbacks: Feedback[] = [new Feedback("Morgs","Serviço  foi muito bom pipipipopopo","Design"),new Feedback("Lucas","Serviço  foi muito bom pipipipopopo","Desenvolvimento") ]
-  constructor() { }
+  freelancersService: FreelancersService;
+  feedbacks: Feedback[] = [];
+
+  constructor(_freelancersService: FreelancersService) {
+    this.freelancersService = _freelancersService;
+   
+   }
 
   ngOnInit(): void {
+    this.feedbacks = this.freelancersService.getFeedbakcs();
   }
 
 }
