@@ -8,13 +8,18 @@ export class DataService {
 
   private usuarios: string[][] = [];
   private usuarioLogado: string;
-  
+  private contractedServices: Service[];
+
   getUsuarioLogado(): string{
     return this.usuarioLogado;
   }
 
   changeUsuario(name:string){
     this.usuarioLogado = name ;
+  }
+
+  getContractedServices(): Service[]{
+    return this.contractedServices;
   }
 
   checarUsuario(name: string, senha: string): boolean {
@@ -30,7 +35,16 @@ export class DataService {
   constructor() { 
     this.usuarios = [["morgs","12345"],["isabel", "2234"]];
     this.usuarioLogado = "bla";
+    this.contractedServices = [new Service("Maria","Design")];
   }
+}
 
+class Service{
+  freelancer: string;
+  service: string;
 
+  constructor(freelancer: string, service: string){
+    this.freelancer = freelancer;
+    this.service = service;
+  }
 }
