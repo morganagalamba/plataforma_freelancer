@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FreelancersService } from '../freelancers.service';
 
 @Component({
   selector: 'app-freelancers-screen',
@@ -10,23 +11,24 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class FreelancersScreenComponent implements OnInit {
 
   service: string | null;
-  freelancers: Freelancer[] = [new Freelancer("Wilton Ramos", 4), new Freelancer("Vinicius Scala", 5), new Freelancer("Marcos", 1), new Freelancer("Marta", 2), new Freelancer("João", 4)];
-  filteredFreelancers: Freelancer[] = []
-  isFiltered: boolean = false;
+  freelancers: string[] = [];
+  dadosFreelancer: FreelancersService;
 
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {
     this.service = "";
+    this.dadosFreelancer = new FreelancersService();
   }
 
   ngOnInit(): void {
     const par = this.activatedRoute.snapshot.paramMap.get('service');
     this.service = par;
+    this.freelancers = this.dadosFreelancer.getFreelancer();
   }
 
-  navigateToFeedback(freelancer: Freelancer) {
+  navigateToContracted() {
     this.router.navigate(['contracted']);
   }
 
@@ -36,23 +38,5 @@ export class FreelancersScreenComponent implements OnInit {
 
   navigateToFreelancersFeedback() {
     this.router.navigate(['freelancers-feedback']);
-  }
-}
-
-class Freelancer {
-  name: string;
-  score: number;
-  email: string;
-  services: string[];
-
-  constructor(name: string, score: number) {
-    this.name = name;
-    this.score = score;
-    this.email = "oioi@gmail.com";
-    this.services = [];
-  }
-
-  getScore() {
-    return this.score.toString() + " estrelas de 5";
   }
 }

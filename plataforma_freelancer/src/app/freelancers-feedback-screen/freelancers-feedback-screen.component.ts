@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FreelancersService } from '../freelancers.service';
 
 @Component({
   selector: 'app-freelancers-feedback-screen',
