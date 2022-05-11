@@ -6,7 +6,7 @@
                 <button class="serviceCard" (click)="navigateToFreelancersFeedback()">
                     <p class="serviceName">{{service.service}}</p>
                     <p class="freelancer">{{service.freelancer}}</p>
-                    <button class="cardButton" (click)="navigateToFeedback()" >
+                    <button class="cardButton" (click)="navigateToFeedback(service.freelancer,service.service)" >
                         Feedback
                     </button>
                 </button>

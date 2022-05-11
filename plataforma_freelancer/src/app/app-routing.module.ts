@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: '', component: LoginScreenComponent },
   { path: 'services', component: ServicesScreenComponent },
   { path: 'freelancers/:service', component: FreelancersScreenComponent },
-  { path: 'feedback', component: FeedbackScreenComponent },
+  { path: 'feedback/:name:service', component: FeedbackScreenComponent },
   { path: 'create', component: CreateServiceScreenComponent },
   { path: 'contracted', component: ContractedServiceScreenComponent},
   { path: 'freelancers-feedback/:freelancer', component: FreelancersFeedbackScreenComponent}

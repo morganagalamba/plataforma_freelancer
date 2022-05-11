@@ -31,7 +31,7 @@ export class FreelancersService {
     return feedbacks;
   }
 
-  addNewFreelancerService(name:string, service: string ){
+  addNewFreelancerService(name:string, service: string){
     for(let i=0 ; i < this.systemFreelancers.length; i++){
       if (this.systemFreelancers[i].name == name){
         this.systemFreelancers[i].services.push(service);
@@ -40,6 +40,15 @@ export class FreelancersService {
     }
     let newFreelancer = new Freelancer(name,[service],[]);
     this.systemFreelancers.push(newFreelancer);
+  }
+
+  addNewFeedbackfor(freelancerName:string, service: string , feedback:string, name: string){
+    for(let i=0 ; i < this.systemFreelancers.length; i++){
+      if (this.systemFreelancers[i].name == freelancerName){
+        this.systemFreelancers[i].feedbacks.push(new Feedback(name,feedback,service));
+        return
+      }
+    }
   }
 
   constructor() {
