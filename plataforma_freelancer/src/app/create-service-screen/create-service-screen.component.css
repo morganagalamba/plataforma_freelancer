@@ -3,5 +3,33 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(248.41deg, #00F0FF 14.5%, #4F23FF 55.64%, #9E00FF 80.41%);
 }
 
+button{
+    margin: 20px;
+    width: 190px;
+    height: 45px;
+}
+
+.createSection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(30, 30, 30, 0.6461) 100%);
+}
+
+input{
+    width: 400px;
+    height: 30px;
+}
+
+h1{
+    color: #FFFFFF;
+    mix-blend-mode: overlay;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.37);
+}

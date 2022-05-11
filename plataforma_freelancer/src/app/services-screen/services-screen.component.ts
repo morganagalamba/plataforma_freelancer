@@ -20,4 +20,8 @@ export class ServicesScreenComponent implements OnInit {
   navigateToFreelancers(forService: string) {
     this.router.navigate(['/freelancers/' + forService]);
   }
+
+  navigateToCreateService() {
+    this.router.navigateByUrl('create');
+  }
 }
