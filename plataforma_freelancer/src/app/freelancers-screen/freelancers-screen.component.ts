@@ -38,7 +38,7 @@ export class FreelancersScreenComponent implements OnInit {
     this.router.navigate(['/create']);
   }
 
-  navigateToFreelancersFeedback() {
-    this.router.navigate(['freelancers-feedback']);
+  navigateToFreelancersFeedback(freelancer: string) {
+    this.router.navigate(['freelancers-feedback/' + freelancer]);
   }
 }

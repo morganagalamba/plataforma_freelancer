@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'feedback', component: FeedbackScreenComponent },
   { path: 'create', component: CreateServiceScreenComponent },
   { path: 'contracted', component: ContractedServiceScreenComponent},
-  { path: 'freelancers-feedback', component: FreelancersFeedbackScreenComponent}
+  { path: 'freelancers-feedback/:freelancer', component: FreelancersFeedbackScreenComponent}
 ];
 
 @NgModule({

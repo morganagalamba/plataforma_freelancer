@@ -6,17 +6,6 @@ import { Injectable } from '@angular/core';
 export class FreelancersService {
 
   private systemFreelancers: Freelancer[];
-  private freelancers: string[] = ["Maria", "Beatriz", "Kece"];
-  private feedbacks: Feedback[] = [new Feedback("Morgs","Serviço  foi muito bom pipipipopopo","Design"),
-                                   new Feedback("Lucas","Serviço  foi muito bom pipipipopopo","Desenvolvimento") ];
-  
-
-  getFreelancer(){
-    return this.freelancers;
-  }
-  getFeedbakcs(){
-    return this.feedbacks;
-  }
 
   getFreelancersFromService(service:string): string[]{
     var freelancers: string[] = [];
@@ -28,6 +17,18 @@ export class FreelancersService {
       }
     }
     return freelancers;
+  }
+
+  getFeedbackFromFreelancer(name:string): Feedback[]{
+    var feedbacks: Feedback[] = [];
+    for(let i=0 ; i < this.systemFreelancers.length; i++){
+      if (this.systemFreelancers[i].name == name){
+        for(let j=0 ; j < this.systemFreelancers[i].feedbacks.length; j++){
+          feedbacks.push(this.systemFreelancers[i].feedbacks[j]);
+        }
+      }    
+    }
+    return feedbacks;
   }
 
   constructor() {
