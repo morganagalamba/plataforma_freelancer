@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../data.service';
+import { ServicesService } from '../services.service';
 
 @Component({
   selector: 'app-services-screen',
@@ -9,11 +10,12 @@ import { DataService } from '../data.service';
 })
 export class ServicesScreenComponent implements OnInit {
   
-  services: string[] = ['Design', 'Desenvolvimento', 'Consultoria', 'Marketing'];
+  services: string[] = [];
   usuarioLogado: string = "oi";
   constructor(
     private router: Router,
-    private dadosUsuario: DataService
+    private dadosUsuario: DataService,
+    private systemServices: ServicesService
   ) { 
   }
 
@@ -21,9 +23,12 @@ export class ServicesScreenComponent implements OnInit {
     this.usuarioLogado = this.dadosUsuario.getUsuarioLogado();
   }
 
+  getServices(): void {
+    this.services = this.systemServices.getServices();
+  }
   ngOnInit(): void {
     this.getUser();
-    console.log(this.usuarioLogado);
+    this.getServices();
   }
 
   navigateToFreelancers(forService: string) {
