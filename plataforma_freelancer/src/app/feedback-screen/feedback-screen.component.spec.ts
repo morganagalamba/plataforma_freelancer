@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { FeedbackScreenComponent } from './feedback-screen.component';
 
@@ -8,7 +9,10 @@ describe('FeedbackScreenComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FeedbackScreenComponent ]
+      declarations: [ FeedbackScreenComponent ],
+      imports: [
+        RouterTestingModule.withRoutes([]),
+      ]
     })
     .compileComponents();
   });
