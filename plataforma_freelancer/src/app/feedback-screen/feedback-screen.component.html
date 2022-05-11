@@ -2,8 +2,8 @@
 
     <div class="modal">
         <h1>{{ "Deixe seu feedback para o serviço de  " + service + " de " + nome }}</h1>
-            <textarea name="feedback" id="feedback" class="form-control"></textarea>
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <textarea name="feedback" id="feedback" class="form-control" #input ></textarea>
+            <button (click)= "addFeedback(input.value)" type="submit" class="btn btn-primary">Enviar</button>
 
     </div>
 </section>

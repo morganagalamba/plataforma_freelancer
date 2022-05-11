@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FreelancersService } from '../freelancers.service';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-feedback-screen',
@@ -14,7 +15,9 @@ export class FeedbackScreenComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private systemServices: FreelancersService) {
+    private systemServices: FreelancersService,
+    private dadosUsuario: DataService,
+    private router: Router) {
     this.nome = " ";
     this.service = "";
    }
@@ -24,10 +27,8 @@ export class FeedbackScreenComponent implements OnInit {
     let aux = "";
 
     if (name != null){
-      console.log(name);
       for(let i=0; i < name.length ; i++){    
         if (name[i] == ":"){
-          console.log("aaaa")
           this.nome = aux;
           aux = ""
         } else {
@@ -36,8 +37,15 @@ export class FeedbackScreenComponent implements OnInit {
       }
       this.service = aux;
     }
-    console.log(this.nome);
-    console.log(this.service);
+
+  }
+
+  addFeedback(feedback: string){
+    console.log(feedback);
+    this.systemServices.addNewFeedbackfor(this.nome,this.service,feedback,this.dadosUsuario.getUsuarioLogado());
+    //this.router.navigate(['freelancers-feedback/' + this.nome]);
+    this.router.navigate(['services']);
+
   }
 
 }
