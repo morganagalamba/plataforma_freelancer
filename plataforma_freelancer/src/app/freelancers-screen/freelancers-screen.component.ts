@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FreelancersService } from '../freelancers.service';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-freelancers-screen',
@@ -10,13 +12,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class FreelancersScreenComponent implements OnInit {
 
   service: string | null;
-  freelancers: Freelancer[] = [new Freelancer("Wilton Ramos", 4), new Freelancer("Vinicius Scala", 5), new Freelancer("Marcos", 1), new Freelancer("Marta", 2), new Freelancer("João", 4)];
-  filteredFreelancers: Freelancer[] = []
-  isFiltered: boolean = false;
+  freelancers: string[] = [];
 
   constructor(
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private systemServices: FreelancersService,
+    private dadosUsuario: DataService
   ) {
     this.service = "";
   }
@@ -24,35 +26,39 @@ export class FreelancersScreenComponent implements OnInit {
   ngOnInit(): void {
     const par = this.activatedRoute.snapshot.paramMap.get('service');
     this.service = par;
+    if (this.service != null){
+      this.freelancers = this.systemServices.getFreelancersFromService(this.service);
+    }
+    
   }
 
-  navigateToFeedback(freelancer: Freelancer) {
+  navigateToContracted(freelancer: string) {
+    if(this.service != null){
+      this.contractNewService(new Service(freelancer,this.service));
+    }
     this.router.navigate(['contracted']);
   }
 
-  navigateToCreateService() {
-    this.router.navigate(['/create']);
+  contractNewService(service: Service) {
+    this.dadosUsuario.updatecontractedServices(service);
   }
 
-  navigateToFreelancersFeedback() {
-    this.router.navigate(['freelancers-feedback']);
+  navigateToCreateService() {
+    this.router.navigate(['/create' ]);
+  }
+
+  navigateToFreelancersFeedback(freelancer: string) {
+   
+    this.router.navigate(['freelancers-feedback/' + freelancer]);
   }
 }
 
-class Freelancer {
-  name: string;
-  score: number;
-  email: string;
-  services: string[];
+class Service{
+  freelancer: string;
+  service: string;
 
-  constructor(name: string, score: number) {
-    this.name = name;
-    this.score = score;
-    this.email = "oioi@gmail.com";
-    this.services = [];
-  }
-
-  getScore() {
-    return this.score.toString() + " estrelas de 5";
+  constructor(freelancer: string, service: string){
+    this.freelancer = freelancer;
+    this.service = service;
   }
 }

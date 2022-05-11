@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-contracted-service-screen',
@@ -9,12 +10,21 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class ContractedServiceScreenComponent implements OnInit {
 
-  services: Service[] = [ new Service("Design","Wilton"), new Service("Desenvolvimento","Isabel")]
+  services: Service[] = []
 
   constructor(private router: Router,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+    private dadosUsuario: DataService
+    ) { }
 
   ngOnInit(): void {
+    const par = this.activatedRoute.snapshot.paramMap.get('contractedService');
+    
+    this.getServices()
+  }
+
+  getServices(){
+    this.services = this.dadosUsuario.getContractedServices();
   }
 
   navigateToFeedback() {
@@ -27,15 +37,12 @@ export class ContractedServiceScreenComponent implements OnInit {
 
 }
 
-class Service { 
-  name: string;
+class Service{
   freelancer: string;
-  feedbacks: String[];
+  service: string;
 
-  constructor(name: string, freelancer: string) {
-    this.name = name;
+  constructor(freelancer: string, service: string){
     this.freelancer = freelancer;
-    this.feedbacks = [];
+    this.service = service;
   }
-
 }

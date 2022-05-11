@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FreelancersService } from '../freelancers.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-freelancers-feedback-screen',
@@ -7,10 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FreelancersFeedbackScreenComponent implements OnInit {
 
-  feedbacks: Feedback[] = [new Feedback("Morgs","Serviço  foi muito bom pipipipopopo","Design"),new Feedback("Lucas","Serviço  foi muito bom pipipipopopo","Desenvolvimento") ]
-  constructor() { }
+  feedbacks: Feedback[] = [];
+  freelancerName: string = "";
+  constructor(
+    private systemServices: FreelancersService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    ) {
+
+   }
 
   ngOnInit(): void {
+    const par = this.activatedRoute.snapshot.paramMap.get('freelancer');
+    if (par != null ){
+      this.freelancerName = par;
+      this.feedbacks = this.systemServices.getFeedbackFromFreelancer(par);
+    }
+    
   }
 
 }
@@ -26,4 +41,17 @@ class Feedback{
     this.service = service;
   }
 
+}
+
+class Freelancer{
+  name:string;
+  services:string[];
+  feedbacks: Feedback[];
+  
+  constructor(name:string, services:string[],
+    feedbacks:Feedback[]){
+    this.name = name;
+    this.services = services;
+    this.feedbacks = feedbacks;
+  }
 }

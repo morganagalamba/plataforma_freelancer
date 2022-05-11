@@ -7,24 +7,29 @@ import { Injectable } from '@angular/core';
 export class DataService {
 
   private usuarios: string[][] = [];
+  private usuarioLogado: string;
+  private contractedServices: Service[];
 
-  getLogin(){
-    return this.usuarios;
-  }
-  getSenha(){
-    //return this.senhas;
+  getUsuarioLogado(): string{
+    return this.usuarioLogado;
   }
 
-  novoUsuario(nome: string){
-    //this.usuarios.push(nome);
+  changeUsuario(name:string){
+    this.usuarioLogado = name ;
   }
-  novaSenha(senha: string){
-    //this.senhas.push(senha);
+
+  updatecontractedServices(service: Service){
+    this.contractedServices.push(service);
+  }
+
+  getContractedServices(): Service[]{
+    return this.contractedServices;
   }
 
   checarUsuario(name: string, senha: string): boolean {
     for(let i=0 ; i<2 ; i++){
       if (this.usuarios[i][0] == name && this.usuarios[i][1] == senha){
+        this.changeUsuario(name);
         return true
       }
     }
@@ -32,8 +37,18 @@ export class DataService {
   }
 
   constructor() { 
-    this.usuarios = [["morgs","12345"],["isabel", "2234"]]
+    this.usuarios = [["morgs","12345"],["isabel", "2234"]];
+    this.usuarioLogado = "bla";
+    this.contractedServices = [];
   }
+}
 
+class Service{
+  freelancer: string;
+  service: string;
 
+  constructor(freelancer: string, service: string){
+    this.freelancer = freelancer;
+    this.service = service;
+  }
 }

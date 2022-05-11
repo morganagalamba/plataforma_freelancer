@@ -13,10 +13,8 @@ export class LoginScreenComponent implements OnInit {
 
   usuarios: string[] = [];
   senhas: string[] = [];
-  dadosUsuario: DataService;
-  
-  constructor(private router: Router) { 
-   this.dadosUsuario = new DataService();
+
+  constructor(private router: Router, private dadosUsuario: DataService) { 
   }
 
   ngOnInit(): void {

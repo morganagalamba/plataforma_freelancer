@@ -4,7 +4,7 @@
         
             <div *ngFor="let service of services">
                 <button class="serviceCard" (click)="navigateToFreelancersFeedback()">
-                    <p class="serviceName">{{service.name}}</p>
+                    <p class="serviceName">{{service.service}}</p>
                     <p class="freelancer">{{service.freelancer}}</p>
                     <button class="cardButton" (click)="navigateToFeedback()" >
                         Feedback
