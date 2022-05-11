@@ -12,20 +12,22 @@ export class FreelancersScreenComponent implements OnInit {
 
   service: string | null;
   freelancers: string[] = [];
-  dadosFreelancer: FreelancersService;
 
   constructor(
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private systemServices: FreelancersService
   ) {
     this.service = "";
-    this.dadosFreelancer = new FreelancersService();
   }
 
   ngOnInit(): void {
     const par = this.activatedRoute.snapshot.paramMap.get('service');
     this.service = par;
-    this.freelancers = this.dadosFreelancer.getFreelancer();
+    if (this.service != null){
+      this.freelancers = this.systemServices.getFreelancersFromService(this.service);
+    }
+    
   }
 
   navigateToContracted() {
