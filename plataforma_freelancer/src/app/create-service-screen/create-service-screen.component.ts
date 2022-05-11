@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+import { FreelancersService } from '../freelancers.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-service-screen',
@@ -7,26 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateServiceScreenComponent implements OnInit {
 
-  service: Service; 
+  service: string; 
 
-  constructor() { 
-    this.service = new Service("",0,"");
+  constructor(private dadosUsuario: DataService,
+    private systemServices: FreelancersService,
+    private router: Router
+    ) { 
+    this.service = "";
   }
 
   ngOnInit(): void {
+  
   }
 
-}
-
-class Service {
-  name: string;
-  price: number;
-  description: string;
-
-  constructor(name: string, price: number, description: string) {
-    this.name = name;
-    this.price = price;
-    this.description = description;
+  addNewService(service: string){
+    console.log(service);
+    this.systemServices.addNewFreelancerService(this.dadosUsuario.getUsuarioLogado(),service);
+    //botar rota para services screen 
+    this.router.navigateByUrl('services');
   }
 
 }

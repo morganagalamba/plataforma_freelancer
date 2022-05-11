@@ -31,6 +31,17 @@ export class FreelancersService {
     return feedbacks;
   }
 
+  addNewFreelancerService(name:string, service: string ){
+    for(let i=0 ; i < this.systemFreelancers.length; i++){
+      if (this.systemFreelancers[i].name == name){
+        this.systemFreelancers[i].services.push(service);
+        return
+      }    
+    }
+    let newFreelancer = new Freelancer(name,[service],[]);
+    this.systemFreelancers.push(newFreelancer);
+  }
+
   constructor() {
     this.systemFreelancers = [
       new Freelancer("Maria",["Desenvolvimento","Design"],[new Feedback("Morgs","Serviço  foi muito bom, excelente profissional","Design")]), 

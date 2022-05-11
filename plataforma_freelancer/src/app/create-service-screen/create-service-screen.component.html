@@ -3,7 +3,7 @@
         <h1>Oferecer serviço</h1>
         <p> Qual serviço você quer oferecer?</p>
         <form action="">
-            <input list="cars">
+            <input list="cars"  #service>
             <datalist id="cars">
                 <option value="Design"></option>
                 <option value="Desenvolvimento"></option>
@@ -11,6 +11,6 @@
                 <option value="Marketing"></option>
             </datalist>
         </form>
-        <button> Salvar </button>
+        <button (click)="addNewService(service.value)"> Salvar </button>
     </div>
 </section>
