@@ -1,11 +1,35 @@
 .feedback-screen {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(0,0,0,0.5);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 749px;
+    background: linear-gradient(248.41deg, #00F0FF 14.5%, #4F23FF 55.64%, #9E00FF 80.41%);
+}
+
+h1{
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.37);
+}
+
+h3{
+    color: white;
+    mix-blend-mode: normal;
+}
+
+.form-group-grade{
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1%;
+    width: 20%;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 20px;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(30, 30, 30, 0.6461) 100%);
 }
 
 .feedback-screen .modal {
@@ -13,11 +37,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 50%;
-    width: 50%;
-    background-color: #fafafa;
+    height: 30%;
+    width: 80%;
     border-radius: 20px;
-    padding: 30px;
+    padding: 20px;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(30, 30, 30, 0.6461) 100%);
+    
+    
 }
 
 .feedback-screen form {
@@ -25,7 +51,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 100%;
+    height: 80%;
     width: 100%;
 }
 
@@ -36,16 +62,10 @@
     justify-content: space-between;
     width: 100%;
     flex-grow: 1;
-    margin: 30px;
+    margin: 10px;
+    padding: 1px;
 }
 
-.feedback-screen form .form-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
 
 .feedback-screen form .form-group.comment {
     display: flex;
@@ -54,6 +74,7 @@
     justify-content: center;
     width: 80%;
     height: 80%;
+    color: aliceblue;
 }
 
 .feedback-screen form .form-group textarea{

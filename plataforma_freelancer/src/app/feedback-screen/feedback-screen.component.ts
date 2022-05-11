@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-feedback-screen',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feedback-screen.component.css']
 })
 export class FeedbackScreenComponent implements OnInit {
-
-  constructor() { }
+  
+  nome: string | null;
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.nome = " ";
+   }
 
   ngOnInit(): void {
+    this.nome = this.activatedRoute.snapshot.paramMap.get('nome');
   }
 
 }
