@@ -3,29 +3,12 @@
         <h1>Login</h1>
         <p>Insira seu login:</p>
         <input type="text" #loginInput>
-        <p class="info">Seu login deve ter no mínimo 5 caracteres</p> 
         <p>Insira sua senha:</p>
         <input type="text" #senhaInput>
-        <p class="info">Sua senha deve ter no mínimo 3 caracteres</p> 
-        
-        
+       
         <button (click)="logar(loginInput.value, senhaInput.value)"> Login </button>
 
     </div>
-
-    <!--
-          <p> Usuários salvos: </p>
-    <ul *ngFor="let usuario of usuarios">
-        <li> <p> {{ usuario }} </p></li>
-    </ul>
-    <p> Senhas salvas: </p>
-    <ul *ngFor="let senha of senhas">
-        <li> <p> {{ senha }} </p></li>
-    </ul>
-
-    -->
-  
-
 </section>
 
     
