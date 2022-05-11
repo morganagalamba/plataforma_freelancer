@@ -7,24 +7,20 @@ import { Injectable } from '@angular/core';
 export class DataService {
 
   private usuarios: string[][] = [];
-
-  getLogin(){
-    return this.usuarios;
-  }
-  getSenha(){
-    //return this.senhas;
+  private usuarioLogado: string;
+  
+  getUsuarioLogado(): string{
+    return this.usuarioLogado;
   }
 
-  novoUsuario(nome: string){
-    //this.usuarios.push(nome);
-  }
-  novaSenha(senha: string){
-    //this.senhas.push(senha);
+  changeUsuario(name:string){
+    this.usuarioLogado = name ;
   }
 
   checarUsuario(name: string, senha: string): boolean {
     for(let i=0 ; i<2 ; i++){
       if (this.usuarios[i][0] == name && this.usuarios[i][1] == senha){
+        this.changeUsuario(name);
         return true
       }
     }
@@ -32,7 +28,8 @@ export class DataService {
   }
 
   constructor() { 
-    this.usuarios = [["morgs","12345"],["isabel", "2234"]]
+    this.usuarios = [["morgs","12345"],["isabel", "2234"]];
+    this.usuarioLogado = "bla";
   }
 
 
