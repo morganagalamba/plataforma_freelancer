@@ -27,8 +27,10 @@ export class ContractedServiceScreenComponent implements OnInit {
     this.services = this.dadosUsuario.getContractedServices();
   }
 
-  navigateToFeedback() {
-    this.router.navigate(['feedback']);
+  navigateToFeedback(name:string, service:string) {
+
+    this.router.navigate(['feedback/'+ name + ":"+service]);
+
   }
 
   navigateToFreelancersFeedback() {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FreelancersService } from '../freelancers.service';
 
 @Component({
   selector: 'app-feedback-screen',
@@ -8,13 +9,35 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class FeedbackScreenComponent implements OnInit {
   
-  nome: string | null;
-  constructor(private activatedRoute: ActivatedRoute) {
+  nome: string;
+  service: string;
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private systemServices: FreelancersService) {
     this.nome = " ";
+    this.service = "";
    }
 
   ngOnInit(): void {
-    this.nome = this.activatedRoute.snapshot.paramMap.get('nome');
+    let name = this.activatedRoute.snapshot.paramMap.get('name:service')
+    let aux = "";
+
+    if (name != null){
+      console.log(name);
+      for(let i=0; i < name.length ; i++){    
+        if (name[i] == ":"){
+          console.log("aaaa")
+          this.nome = aux;
+          aux = ""
+        } else {
+          aux = aux + name[i];
+        }
+      }
+      this.service = aux;
+    }
+    console.log(this.nome);
+    console.log(this.service);
   }
 
 }
