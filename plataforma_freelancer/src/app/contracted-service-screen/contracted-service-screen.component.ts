@@ -21,6 +21,10 @@ export class ContractedServiceScreenComponent implements OnInit {
     this.router.navigate(['feedback']);
   }
 
+  navigateToFreelancersFeedback() {
+    this.router.navigate([ 'freelancers-feedback']);
+  }
+
 }
 
 class Service { 
