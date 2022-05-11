@@ -4,12 +4,13 @@
     <button class="createService" (click)="navigateToCreateService()">Cadastrar serviço</button>
 
     <div class="lista-de-freelancers">
-        <div *ngFor="let freelancer of freelancers" class="serviceCard">
-            {{ freelancer.name }}
-            <button class="cardButton" (click)="navigateToFeedback(freelancer)">
-                Contratar
-            </button>
-        </div>
+        <button  *ngFor="let freelancer of freelancers" class="serviceCard" (click)="navigateToFreelancersFeedback()">
+                {{ freelancer.name }}
+                <button class="cardButton" (click)="navigateToFeedback(freelancer)">
+                    Contratar
+                </button>
+        </button>
+        
 
     </div>
    
